@@ -1,10 +1,59 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import Card from "../components/Card.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import Social from "../components/Social.astro";
+import GitHub from "../icons/GitHub.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-	</main>
+<Layout title="Jose Ibañez portfolio - Frontend Web Developer" />
+  <main>
+    <section class="w-full mx-auto lg:w-[740px] py-44">
+      <h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-10">
+        Hey, soy Pepe
+        <a
+          href="https://www.linkedin.com/in/jose-jesus-ibanez-cantos/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class="text-2xl text-wrap">
+        <span class="text-yellow-200">Más de 5 años de experiencia.</span>
+        <span class="opacity-80"> De Alicante, España</span>
+        <div class="flex">
+          <div class="opacity-80">Siempre aprendiendo</div>
+          <div class="blink"></div>
+        </div>
+      </h2>
+    </section>
+  </main>
 </Layout>
 
+<style>
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .blink {
+    display: flex;
+    align-self: center;
+    height: 20px;
+    animation: flicker 1s infinite;
+    width: 3px;
+    background-color: aliceblue;
+    border-color: aliceblue;
+    margin-left: 3px;
+  }
+</style>
