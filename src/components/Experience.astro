@@ -1,0 +1,36 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    title: "Frontend Developer",
+    company: "Zataca Systems, S.L.",
+    location: "Alicante, Spain",
+    date: "Feb. 2020 - Present",
+    description:
+      "Frontend Developer specialized in building dynamic and efficient user interfaces using Vue.js 2 and SCSS. I am responsible for implementing views and making API requests via Axios, ensuring smooth interaction between the frontend and backend.I have contributed to the development of internal products, including the creation of reusable components for the company’s component library. My focus is on optimizing code, applying advanced techniques such as recursive functions, and ensuring components interact effectively with each other to build scalable, maintainable, and high-performance applications.",
+    skills: ["VueJS2", "Javascript", "SCSS", "HTML"],
+  },
+  {
+    title: "Developer",
+    company: "Everis",
+    location: "Alicante, Spain",
+    date: "Mar. 2019 - Feb. 2020",
+    description: "Banking and insurance web application development.",
+    skills: ["Java", "Javascript", "SQL", "AWK"],
+  },
+];
+---
+
+<div class="flex flex-col">
+  <h2 class="text-2xl font-semibold mb-6">Experience</h2>
+  <ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+      EXPERIENCE.map((experience) => (
+        <li class="mb-10 ms-4">
+          <ExperienceItem {...experience} />
+        </li>
+      ))
+    }
+  </ol>
+</div>

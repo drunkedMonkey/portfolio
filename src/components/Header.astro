@@ -1,37 +1,36 @@
----
-import GitHub from "../icons/GitHub.astro";
-import LinkedIn from "../icons/LinkedIn.astro";
-import Social from "./Social.astro";
----
-
-<header class="flex justify-between items-center py-5 w-[1120px] mx-auto">
-  <div class="flex justify-between w-[150px]">
-    <img
-      class="rounded-full w-12 h-12 "
-      src="../../public/avatar-photo.jpg"
-      alt="avatar-photo"
-    />
-
-    <Social class="hover:scale-105 transition-transform duration-300 icon-pointer"  href="https://www.linkedin.com/in/jose-jesus-ibanez-cantos/">
-      <LinkedIn class="w-4 h-4 rounded-6px hover:scale-105" />
-    </Social>
-
-    <Social class="icon-pointer hover:scale-105 transition-transform duration-300"  href="https://github.com/drunkedMonkey">
-      <GitHub class="w-4 h-4 rounded-6px" />
-    </Social>
-  </div>
-
+<header
+  class="flex flex-wrap justify-center items-center py-5 w-full xl:w-[1120px] mx-auto"
+>
   <nav class="flex flex-row gap-x-10">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/projects">Projects</a>
-    <a href="/contact">Contact</a>
+    <a class="lighter" href="#top">Home</a>
+    <a class="lighter" href="#experience">Experience</a>
+    <a class="lighter" href="#about">About</a>
+    <a class="lighter" href="#projects">Projects</a>
+    <a class="lighter" href="#contact">Contact</a>
   </nav>
 </header>
 
 <style>
-    .icon-pointer{
-        cursor: pointer;
-        border-color: red;
-    }
+  nav {
+    height: 40px;
+    padding: 0 10px;
+    border: solid 1px rgba(99, 102, 255, 0.5);
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+  }
+  .icon-pointer {
+    cursor: pointer;
+    border-color: red;
+  }
+
+  .lighter {
+    transition:
+      background-color 0.5s ease,
+      color 0.5s ease; /* Transición suave para el fondo y el color del texto */
+  }
+
+  .lighter:hover {
+    color: #fef08a; /* Cambio a amarillo al hacer hover */
+  }
 </style>

@@ -1,37 +1,88 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
-import Card from "../components/Card.astro";
-import LinkedIn from "../icons/LinkedIn.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+import Separator from "../components/Separator.astro";
 import Social from "../components/Social.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
 import GitHub from "../icons/GitHub.astro";
 ---
 
-<Layout title="Jose Ibañez portfolio - Frontend Web Developer" />
-  <main>
-    <section class="w-full mx-auto lg:w-[740px] py-44">
-      <h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-10">
-        Hey, soy Pepe
-        <a
-          href="https://www.linkedin.com/in/jose-jesus-ibanez-cantos/"
-          target="_blank"
-          rel="noopener"
-          class="flex justify-center items-center"
-        >
-        </a>
-      </h1>
-      <h2 class="text-2xl text-wrap">
-        <span class="text-yellow-200">Más de 5 años de experiencia.</span>
-        <span class="opacity-80">Alicante, España</span>
+<Layout
+  title="portfolio de Jose Ibañez - Frontend Web Developer"
+  description="Contrata a José Ibañez para tus desarrollos"
+>
+  <head> </head>
+  <main class="px-20">
+    <SectionContainer class="py-10">
+      <div class="flex">
+        <img
+          class="rounded-full w-20 h-20 mb-5 mr-5"
+          src="../../public/avatar-photo.jpg"
+          alt="avatar-photo"
+        />
         <div class="flex">
-          <div class="opacity-80">Siempre aprendiendo</div>
+          <h1
+            class="flex flex-wrap text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+          >
+            Hey, I'm
+            <a
+              href="https://www.linkedin.com/in/jose-jesus-ibanez-cantos/"
+              target="_blank"
+              rel="noopener"
+              ><span class="lighter"> José Ibañez</span>
+            </a>
+          </h1>
+        </div>
+      </div>
+      <h2 class="text-xl: lg:text-2xl text-wrap">
+        <span class="text-yellow-200 text-wrap max-w-[700px]"
+          >Over 5 years of experience.</span
+        >
+        <span class="opacity-80">Alicante, Spain</span>
+        <div class="flex">
+          <div class="opacity-80">Always learning...</div>
           <div class="blink"></div>
         </div>
       </h2>
-    </section>
+    </SectionContainer>
+
+    <Separator>
+      <Social
+        class="hover:scale-105 transition-transform duration-300 icon-pointer"
+        href="https://www.linkedin.com/in/jose-jesus-ibanez-cantos/"
+      >
+        <LinkedIn class="w-4 h-4 rounded-6px hover:scale-105" />
+      </Social>
+
+      <Social
+        class="icon-pointer hover:scale-105 transition-transform duration-300"
+        href="https://github.com/drunkedMonkey"
+      >
+        <GitHub class="w-4 h-4 rounded-6px" />
+      </Social>
+    </Separator>
+
+    <SectionContainer id="experience" class="py-10">
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="about" class="py-10">
+      <About />
+    </SectionContainer>
+
+    <SectionContainer id="contact" class="py-10">
+      <Contact />
+    </SectionContainer>
+
+    <SectionContainer id="projects" class="py-10">
+      <Projects />
+    </SectionContainer>
   </main>
 </Layout>
-
 <style>
   @keyframes flicker {
     0% {
@@ -43,6 +94,16 @@ import GitHub from "../icons/GitHub.astro";
     100% {
       opacity: 1;
     }
+  }
+
+  .lighter {
+    transition:
+      background-color 0.5s ease,
+      color 0.5s ease; /* Transición suave para el fondo y el color del texto */
+  }
+
+  .lighter:hover {
+    color: #fef08a; /* Cambio a amarillo al hacer hover */
   }
 
   .blink {
